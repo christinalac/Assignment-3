@@ -25,17 +25,24 @@ function Home({
         breed.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const totalBreeds = breeds.length;
+
     return (
         <div className="container">
             <SearchBar
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
             />
 
             <FilterBtn
-                sortAZ={sortAZ}
-                sortZA={sortZA}
+              sortAZ={sortAZ}
+              sortZA={sortZA}
             />
+
+            <div className="summary">
+              <p>Total Breeds: {totalBreeds}</p>
+            </div>
+
             <BreedLst breeds={filteredBreeds} />
         </div>
 
